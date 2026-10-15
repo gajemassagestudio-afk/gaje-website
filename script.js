@@ -2,15 +2,15 @@
 
 // Tek yetkili fiyat kaynağı: Kullanıcının paylaştığı Gaje Masaj Stüdyosu menüsü (Ekim 2026).
 const services = [
-  { id:'klasik', title:'Klasik Masaj', description:'Tüm beden için rahatlama', duration:60, price:1500, category:'body', icon:'✳', number:'01' },
-  { id:'aromaterapi', title:'Aromaterapi Masajı', description:'Doğal yağlarla derin rahatlama', duration:60, price:1500, category:'body', icon:'❧', number:'02' },
-  { id:'derin-doku', title:'Derin Doku Masajı', description:'Kas gerginliklerine özel', duration:60, price:1800, category:'body', icon:'〰', number:'03' },
-  { id:'lenf', title:'Lenf Drenaj', description:'Ödem atılımı ve hafifleme', duration:60, price:1800, category:'special', icon:'◈', number:'04' },
-  { id:'madero', title:'Maderoterapi', description:'Sıkılaşma ve şekillendirme', duration:60, price:1900, category:'special', icon:'◉', number:'05' },
-  { id:'thai', title:'Thai Masajı', description:'Esneklik ve enerji dengesi', duration:60, price:1900, category:'special', icon:'✦', number:'06' },
-  { id:'yuz', title:'Yüz Masajı', description:'Cilt bakımı ve doğal ışıltı', duration:40, price:1000, category:'face', icon:'✾', number:'07' },
-  { id:'transbuccal', title:'Transbuccal Yüz Masajı', description:'Yüz hatlarında sıkılaşma', duration:50, price:1300, category:'face', icon:'❋', number:'08' },
-  { id:'sporcu', title:'Sporcu Masajı', description:'Kasların yenilenmesi ve performans artışı', duration:60, price:1800, category:'special', icon:'✧', number:'09' }
+  { id:'klasik', title:'Klasik Masaj', description:'Tüm beden için rahatlama', duration:60, price:1500, category:'body', icon:'✳', number:'01' , calLink:'cansu-cak%C4%B1r-zzcza8/klasik-masaj' },
+  { id:'aromaterapi', title:'Aromaterapi Masajı', description:'Doğal yağlarla derin rahatlama', duration:60, price:1500, category:'body', icon:'❧', number:'02' , calLink:'cansu-cak%C4%B1r-zzcza8/aromaterapi-masaj%C4%B1' },
+  { id:'derin-doku', title:'Derin Doku Masajı', description:'Kas gerginliklerine özel', duration:60, price:1800, category:'body', icon:'〰', number:'03' , calLink:'cansu-cak%C4%B1r-zzcza8/derin-doku-masaj%C4%B1' },
+  { id:'lenf', title:'Lenf Drenaj', description:'Ödem atılımı ve hafifleme', duration:60, price:1800, category:'special', icon:'◈', number:'04' , calLink:'cansu-cak%C4%B1r-zzcza8/lenf-drenaj' },
+  { id:'madero', title:'Maderoterapi', description:'Sıkılaşma ve şekillendirme', duration:60, price:1900, category:'special', icon:'◉', number:'05' , calLink:'cansu-cak%C4%B1r-zzcza8/maderoterapi' },
+  { id:'thai', title:'Thai Masajı', description:'Esneklik ve enerji dengesi', duration:60, price:1900, category:'special', icon:'✦', number:'06' , calLink:'cansu-cak%C4%B1r-zzcza8/thai-masaj%C4%B1' },
+  { id:'yuz', title:'Yüz Masajı', description:'Cilt bakımı ve doğal ışıltı', duration:40, price:1000, category:'face', icon:'✾', number:'07' , calLink:'cansu-cak%C4%B1r-zzcza8/yuz-masaj%C4%B1' },
+  { id:'transbuccal', title:'Transbuccal Yüz Masajı', description:'Yüz hatlarında sıkılaşma', duration:50, price:1300, category:'face', icon:'❋', number:'08' , calLink:'cansu-cak%C4%B1r-zzcza8/transbuccal-yuz-masaj%C4%B1' },
+  { id:'sporcu', title:'Sporcu Masajı', description:'Kasların yenilenmesi ve performans artışı', duration:60, price:1800, category:'special', icon:'✧', number:'09' , calLink:'cansu-cak%C4%B1r-zzcza8/sporcu-masaj%C4%B1' }
 ];
 
 const packages = [
@@ -31,7 +31,8 @@ function renderServices(filter='all') {
       <div class="service-top"><span class="service-icon" aria-hidden="true">${s.icon}</span><span class="service-index">${s.number} / 09</span></div>
       <h3>${s.title}</h3><p class="service-description">${s.description}</p>
       <div class="service-meta"><span>◷ &nbsp; ${s.duration} dk</span><strong>${money(s.price)}</strong></div>
-      <a class="service-book" href="${book('masaj', s.title)}" target="_blank" rel="noopener noreferrer" aria-label="${s.title} için WhatsApp'tan randevu al">Randevu Al <span aria-hidden="true">↗</span></a>
+      <p class="booking-note">Online rezervasyon · İşletme onayıyla kesinleşir</p>
+      <a class="service-book" href="https://cal.com/${s.calLink}" data-cal-link="${s.calLink}" data-cal-config='{"layout":"month_view"}' aria-label="${s.title} için online randevu talep et">Randevu Al <span aria-hidden="true">↗</span></a>
     </article>`).join('');
 }
 function renderPackages(){
@@ -47,6 +48,35 @@ function renderPackages(){
     </article>`).join('');
 }
 renderServices(); renderPackages();
+
+// Cal.com'un resmi açılır rezervasyon penceresi. Bağlantılar aynı zamanda yedek
+// yönlendirme olarak çalışır: widget yüklenmezse müşteriler Cal.com'a gidebilir.
+(function (C, A, L) {
+  const push = (api, args) => api.q.push(args);
+  const d = C.document;
+  C.Cal = C.Cal || function () {
+    const cal = C.Cal, args = arguments;
+    if (!cal.loaded) {
+      cal.ns = {}; cal.q = cal.q || [];
+      d.head.appendChild(d.createElement('script')).src = A;
+      cal.loaded = true;
+    }
+    if (args[0] === L) {
+      const api = function () { push(api, arguments); };
+      const namespace = args[1];
+      api.q = api.q || [];
+      if (typeof namespace === 'string') {
+        cal.ns[namespace] = cal.ns[namespace] || api;
+        push(cal.ns[namespace], args);
+        push(cal, ['initNamespace', namespace]);
+      } else push(cal, args);
+      return;
+    }
+    push(cal, args);
+  };
+})(window, 'https://app.cal.com/embed/embed.js', 'init');
+Cal('init', { origin: 'https://cal.com' });
+Cal('ui', { styles: { branding: { brandColor: '#805F64' } }, layout: 'month_view', hideEventTypeDetails: false });
 document.querySelectorAll('.filter').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter').forEach(el => {el.classList.remove('active');el.setAttribute('aria-pressed','false');});
