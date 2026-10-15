@@ -28,23 +28,23 @@ function renderServices(filter='all') {
   const filtered = services.filter(s => filter === 'all' || filter === s.category);
   serviceGrid.innerHTML = filtered.map(s => `
     <article class="service-card" id="service-${s.id}">
-      <div class="service-top"><span class="service-icon" aria-hidden="true">${s.icon}</span><span class="service-index">${s.number} / 09</span></div>
+      <div class="service-top"><span class="service-index">${s.number} / 09</span></div>
       <h3>${s.title}</h3><p class="service-description">${s.description}</p>
-      <div class="service-meta"><span>◷ &nbsp; ${s.duration} dk</span><strong>${money(s.price)}</strong></div>
+      <div class="service-meta"><span>${s.duration} dk</span><strong>${money(s.price)}</strong></div>
       <p class="booking-note">Online rezervasyon · İşletme onayıyla kesinleşir</p>
-      <button type="button" class="service-book" data-cal-link="${s.calLink}" data-cal-config='{"layout":"month_view"}' aria-label="${s.title} için online randevu talep et">Randevu Al <span aria-hidden="true">↗</span></button>
+      <button type="button" class="service-book" data-cal-link="${s.calLink}" data-cal-config='{"layout":"month_view"}' aria-label="${s.title} için online randevu talep et">Randevu Al</button>
     </article>`).join('');
 }
 function renderPackages(){
   packageGrid.innerHTML = packages.map(p => `
     <article class="package-card ${p.theme}" id="package-${p.id}">
-      <div class="package-top"><span class="package-count">${p.count}</span><span class="package-icon" aria-hidden="true">${p.icon}</span></div>
+      <div class="package-top"><span class="package-count">${p.count}</span></div>
       <p class="package-overline">${p.badge}</p>
       <h3>${p.title} <em>${p.label}</em></h3>
-      <div class="package-contents">${p.contents.map(c=>`<p><span class="tick">✳</span>${c}</p>`).join('')}</div>
-      ${p.gift ? `<span class="gift-line">✧ &nbsp; 1 Yüz Masajı Hediye</span>` : ''}
+      <div class="package-contents">${p.contents.map(c=>`<p>${c}</p>`).join('')}</div>
+      ${p.gift ? `<span class="gift-line">1 Yüz Masajı Hediye</span>` : ''}
       <div class="package-pricing"><del>${money(p.original)}</del><strong>${money(p.current)}</strong><small>SEANS BAŞI ${money(p.perSession)}</small></div>
-      <a class="package-cta" href="${book('paket', p.title)}" target="_blank" rel="noopener noreferrer">Paketi Seç <span aria-hidden="true">↗</span></a>
+      <a class="package-cta" href="${book('paket', p.title)}" target="_blank" rel="noopener noreferrer">Paketi Seç</a>
     </article>`).join('');
 }
 renderServices(); renderPackages();
