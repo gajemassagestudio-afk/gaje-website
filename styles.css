@@ -296,3 +296,55 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
+/* GAJE V6 START */
+
+/* Üç cümlede tek ve kesintisiz ombre */
+.intro-main h2.intro-gradient {
+    display: inline-block;
+    max-width: 100%;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(30px, 4.4vw, 52px);
+    line-height: 1.44;
+    letter-spacing: -.035em;
+
+    background: linear-gradient(
+        to bottom,
+        #d69baa 0%,
+        #c3a09a 50%,
+        #aa8b77 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Masaj menümüz ve Masaj paketleri */
+.services .section-heading h2,
+.packages .section-heading h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+}
+
+.services .section-heading h2 em,
+.packages .section-heading h2 em {
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+@media (max-width: 570px) {
+    .intro-main h2.intro-gradient {
+        font-size: clamp(24px, 6.6vw, 34px);
+        line-height: 1.44;
+    }
+}
+
+/* GAJE V6 END */
