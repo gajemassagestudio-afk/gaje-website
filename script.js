@@ -32,7 +32,7 @@ function renderServices(filter='all') {
       <h3>${s.title}</h3><p class="service-description">${s.description}</p>
       <div class="service-meta"><span>◷ &nbsp; ${s.duration} dk</span><strong>${money(s.price)}</strong></div>
       <p class="booking-note">Online rezervasyon · İşletme onayıyla kesinleşir</p>
-      <a class="service-book" href="https://cal.com/${s.calLink}" data-cal-link="${s.calLink}" data-cal-config='{"layout":"month_view"}' aria-label="${s.title} için online randevu talep et">Randevu Al <span aria-hidden="true">↗</span></a>
+      <button type="button" class="service-book" data-cal-link="${s.calLink}" data-cal-config='{"layout":"month_view"}' aria-label="${s.title} için online randevu talep et">Randevu Al <span aria-hidden="true">↗</span></button>
     </article>`).join('');
 }
 function renderPackages(){
