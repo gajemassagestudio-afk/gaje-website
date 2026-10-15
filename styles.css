@@ -206,3 +206,93 @@
         margin: 0 0 9px;
     }
 }
+
+
+/* ===== GAJE SMALL REVISION V5 ===== */
+
+/* Header logosu biraz daha büyük */
+.brand {
+  gap: 10px;
+}
+
+.brand-emblem {
+  width: 64px;
+  height: 64px;
+}
+
+.brand-name {
+  font-size: 41px;
+}
+
+.brand-description {
+  font-size: 8.5px;
+}
+
+/* "Biraz dur / Derin bir nefes al / Bu zaman yalnızca senin"
+   tek blok ombre yazı */
+.intro-main h2 {
+  background: linear-gradient(180deg, #cfa49c 0%, #b88f85 42%, #8f7365 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro-main h2 span {
+  color: inherit;
+  -webkit-text-fill-color: inherit;
+}
+
+/* Masaj menümüz başlığı:
+   iki kelime de aynı font ve aynı renk */
+.services .section-heading h2 em {
+  color: inherit;
+  font-style: normal;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+/* Masaj paketleri başlığı:
+   iki kelime de aynı font ve aynı renk */
+.packages .section-heading h2 em {
+  color: inherit;
+  font-style: normal;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+/* Footer logo altındaki yazı biraz daha sade */
+.footer-top > p {
+  line-height: 1.3;
+}
+
+/* Mobilde header logo dengesi */
+@media (max-width: 800px) {
+  .brand-emblem {
+    width: 58px;
+    height: 58px;
+  }
+
+  .brand-name {
+    font-size: 37px;
+  }
+}
+
+@media (max-width: 570px) {
+  .brand-emblem {
+    width: 54px;
+    height: 54px;
+  }
+
+  .brand-name {
+    font-size: 34px;
+  }
+
+  .intro-main h2 {
+    background: linear-gradient(180deg, #cfa49c 0%, #b88f85 42%, #8f7365 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
