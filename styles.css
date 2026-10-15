@@ -360,3 +360,23 @@
 .gift-note strong {
   font-size: 10px;
 }
+
+
+/* GAJE DESIGN V8 */
+
+/* Masaj menümüz ve Masaj paketleri: yumuşak kahve */
+.services .section-heading h2,
+.packages .section-heading h2 {
+    color: #69574e;
+}
+
+/* Ana başlığın üstündeki boşluğu hafif azalt */
+.hero .hero-grid {
+    padding-top: 37px;
+}
+
+@media (max-width: 570px) {
+    .hero .hero-grid {
+        padding-top: 44px;
+    }
+}
