@@ -353,3 +353,10 @@
 .gift-note {
   font-size: 10px;
 }
+
+/* Hediye yazısını tüm ekranlarda 10px yap */
+.gift-note,
+.gift-note span:first-child,
+.gift-note strong {
+  font-size: 10px;
+}
