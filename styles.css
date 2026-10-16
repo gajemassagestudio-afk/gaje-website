@@ -383,111 +383,72 @@
 
 
 
-/* GAJE WOMEN ONLY - HERO V10 */
 
-.hero-women-note {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 20px;
-    color: #ba6678;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .15em;
-    white-space: nowrap;
+
+/* GAJE WOMEN LABEL V13 */
+
+.hero {
+    position: relative;
 }
 
-.hero-women-line {
-    width: 25px;
-    height: 1px;
-    background: #ba6678;
-    flex-shrink: 0;
-}
+/* Etiket sayfada ekstra yer kaplamaz */
+.women-only-strip {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    z-index: 2;
 
-@media (max-width: 570px) {
-    .hero .hero-grid {
-        padding-top: 27px;
-    }
-
-    .hero-women-note {
-        font-size: 11px;
-        letter-spacing: .14em;
-        gap: 10px;
-        margin-bottom: 18px;
-    }
-
-    .hero-women-line {
-        width: 22px;
-    }
-}
-
-
-/* GAJE LOGO LABEL V11 */
-
-/* MASAJ STÜDYOSU yazısına göre ortalanmış */
-.brand-wordmark {
-    align-items: center;
-}
-
-.brand-women-label {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
-    margin-top: 6px;
+    gap: 11px;
+
     color: #ba6678;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: .09em;
-    white-space: nowrap;
-    line-height: 1.2;
+    pointer-events: none;
 }
 
-.brand-women-label::before,
-.brand-women-label::after {
+.women-only-strip span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .15em;
+}
+
+.women-only-strip::before,
+.women-only-strip::after {
     content: "";
-    display: block;
-    width: 19px;
+    width: 25px;
     height: 1px;
     background: currentColor;
-    flex-shrink: 0;
 }
 
-/* Logo altındaki yazıya yer aç */
+/* Header eski boyutunda */
 .site-header {
-    height: 110px;
+    height: 94px;
+}
+
+/* Önceki başlık konumunu koru */
+.hero .hero-grid {
+    padding-top: 53px;
 }
 
 @media (max-width: 800px) {
     .site-header {
-        height: 96px;
-    }
-
-    .site-header .header-layout {
-        padding-bottom: 8px;
+        height: 74px;
     }
 
     .site-header .nav {
-        top: 96px;
+        top: 74px;
+    }
+
+    .hero .hero-grid {
+        padding-top: 59px;
     }
 }
 
 @media (max-width: 570px) {
-    .brand-women-label {
-        font-size: 9px;
-        gap: 8px;
-        margin-top: 5px;
-    }
-
-    .brand-women-label::before,
-    .brand-women-label::after {
-        width: 18px;
-    }
-
-    /* Ana başlıkla daha fazla nefes alan boşluk */
     .hero .hero-grid {
-        padding-top: 48px;
+        padding-top: 70px;
     }
 }
