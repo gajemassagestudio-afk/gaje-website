@@ -381,44 +381,43 @@
     }
 }
 
-/* Mobile menu note: Kadınlara Özel */
-.women-only-note {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin: 10px 0 26px;
-  padding-top: 4px;
-}
 
-.women-only-text {
-  color: #b56979; /* Gaje bordosundan daha açık */
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
 
-.women-only-line {
-  width: 34px;
-  height: 1px;
-  background: #b56979;
-  opacity: 0.95;
-  display: block;
-}
+/* GAJE WOMEN ONLY - HERO V10 */
 
-@media (max-width: 768px) {
-  .women-only-note {
-    margin: 6px 0 24px;
-  }
-
-  .women-only-text {
+.hero-women-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 20px;
+    color: #ba6678;
+    font-family: 'DM Sans', sans-serif;
     font-size: 12px;
-    letter-spacing: 0.16em;
-  }
+    font-weight: 600;
+    letter-spacing: .15em;
+    white-space: nowrap;
+}
 
-  .women-only-line {
-    width: 28px;
-  }
+.hero-women-line {
+    width: 25px;
+    height: 1px;
+    background: #ba6678;
+    flex-shrink: 0;
+}
+
+@media (max-width: 570px) {
+    .hero .hero-grid {
+        padding-top: 27px;
+    }
+
+    .hero-women-note {
+        font-size: 11px;
+        letter-spacing: .14em;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .hero-women-line {
+        width: 22px;
+    }
 }

@@ -91,27 +91,3 @@ nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.c
 window.addEventListener('keydown',e=>{if(e.key==='Escape' && nav.classList.contains('is-open')){nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.focus();}});
 document.getElementById('year').textContent=new Date().getFullYear();
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menuContainer =
-    document.querySelector(".mobile-menu nav") ||
-    document.querySelector(".mobile-menu") ||
-    document.querySelector(".menu-panel nav") ||
-    document.querySelector(".menu-panel") ||
-    document.querySelector(".nav-panel nav") ||
-    document.querySelector(".nav-panel") ||
-    document.querySelector(".drawer-menu nav") ||
-    document.querySelector(".drawer-menu");
-
-  if (!menuContainer) return;
-  if (document.querySelector(".women-only-note")) return;
-
-  const note = document.createElement("div");
-  note.className = "women-only-note";
-  note.innerHTML = `
-    <span class="women-only-line" aria-hidden="true"></span>
-    <span class="women-only-text">Kadınlara Özel</span>
-    <span class="women-only-line" aria-hidden="true"></span>
-  `;
-
-  menuContainer.prepend(note);
-});
