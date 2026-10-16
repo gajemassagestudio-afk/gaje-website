@@ -392,36 +392,11 @@
 }
 
 /* Etiket sayfada ekstra yer kaplamaz */
-.women-only-strip {
-    position: absolute;
-    top: 12px;
-    left: 0;
-    right: 0;
-    z-index: 2;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 11px;
 
-    color: #ba6678;
-    pointer-events: none;
-}
 
-.women-only-strip span {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .15em;
-}
 
-.women-only-strip::before,
-.women-only-strip::after {
-    content: "";
-    width: 25px;
-    height: 1px;
-    background: currentColor;
-}
+
 
 /* Header eski boyutunda */
 .site-header {
@@ -452,3 +427,69 @@
         padding-top: 70px;
     }
 }
+
+
+/* GAJE BRAND NOTE V14 START */
+
+/* Logo aynı kalır; alt yazı yer kaplamaz */
+.site-header .brand {
+    position: relative;
+    --gaje-symbol-width: 64px;
+}
+
+.site-header .brand-women-note {
+    position: absolute;
+
+    /* Sadece MASAJ STÜDYOSU sütununu ortala */
+    left: calc(var(--gaje-symbol-width) + 10px);
+    right: 0;
+    top: calc(100% - 5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    color: #ba6678;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.site-header .brand-women-note::before,
+.site-header .brand-women-note::after {
+    content: "";
+    width: 15px;
+    height: 1px;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+@media (max-width: 800px) {
+    .site-header .brand {
+        --gaje-symbol-width: 58px;
+    }
+}
+
+@media (max-width: 570px) {
+    .site-header .brand {
+        --gaje-symbol-width: 54px;
+    }
+
+    .site-header .brand-women-note {
+        font-size: 9px;
+        gap: 6px;
+        top: calc(100% - 5px);
+    }
+
+    .site-header .brand-women-note::before,
+    .site-header .brand-women-note::after {
+        width: 13px;
+    }
+}
+
+/* GAJE BRAND NOTE V14 END */
