@@ -421,3 +421,73 @@
         width: 22px;
     }
 }
+
+
+/* GAJE LOGO LABEL V11 */
+
+/* MASAJ STÜDYOSU yazısına göre ortalanmış */
+.brand-wordmark {
+    align-items: center;
+}
+
+.brand-women-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 6px;
+    color: #ba6678;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .09em;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.brand-women-label::before,
+.brand-women-label::after {
+    content: "";
+    display: block;
+    width: 19px;
+    height: 1px;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+/* Logo altındaki yazıya yer aç */
+.site-header {
+    height: 110px;
+}
+
+@media (max-width: 800px) {
+    .site-header {
+        height: 96px;
+    }
+
+    .site-header .header-layout {
+        padding-bottom: 8px;
+    }
+
+    .site-header .nav {
+        top: 96px;
+    }
+}
+
+@media (max-width: 570px) {
+    .brand-women-label {
+        font-size: 9px;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .brand-women-label::before,
+    .brand-women-label::after {
+        width: 18px;
+    }
+
+    /* Ana başlıkla daha fazla nefes alan boşluk */
+    .hero .hero-grid {
+        padding-top: 48px;
+    }
+}
