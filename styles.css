@@ -380,3 +380,45 @@
         padding-top: 44px;
     }
 }
+
+/* Mobile menu note: Kadınlara Özel */
+.women-only-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px 0 26px;
+  padding-top: 4px;
+}
+
+.women-only-text {
+  color: #b56979; /* Gaje bordosundan daha açık */
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.women-only-line {
+  width: 34px;
+  height: 1px;
+  background: #b56979;
+  opacity: 0.95;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .women-only-note {
+    margin: 6px 0 24px;
+  }
+
+  .women-only-text {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+  }
+
+  .women-only-line {
+    width: 28px;
+  }
+}
