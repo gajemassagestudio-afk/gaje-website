@@ -493,3 +493,26 @@
 }
 
 /* GAJE BRAND NOTE V14 END */
+
+/* Kadınlara Özel - ince hizalama V16 */
+.site-header .brand-women-note {
+  top: calc(100% - 1px);
+  gap: 5px;
+}
+
+.site-header .brand-women-note::before,
+.site-header .brand-women-note::after {
+  width: 8px;
+}
+
+@media (max-width: 570px) {
+  .site-header .brand-women-note {
+    top: calc(100% - 1px);
+    gap: 5px;
+  }
+
+  .site-header .brand-women-note::before,
+  .site-header .brand-women-note::after {
+    width: 8px;
+  }
+}
